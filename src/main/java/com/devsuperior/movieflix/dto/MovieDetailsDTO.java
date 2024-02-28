@@ -25,16 +25,6 @@ public class MovieDetailsDTO {
         this.genre = genre;
     }
 
-    public MovieDetailsDTO(Movie movie, GenreDTO genreDTO) {
-        id = movie.getId();
-        title = movie.getTitle();
-        subTitle = movie.getSubTitle();
-        year = movie.getYear();
-        imgUrl = movie.getImgUrl();
-        synopsis = movie.getSynopsis();
-        genre = genreDTO;
-    }
-
     public MovieDetailsDTO(Movie movie) {
         id = movie.getId();
         title = movie.getTitle();
@@ -42,6 +32,7 @@ public class MovieDetailsDTO {
         year = movie.getYear();
         imgUrl = movie.getImgUrl();
         synopsis = movie.getSynopsis();
+        genre = new GenreDTO(movie.getGenre());
     }
 
     public Long getId() {
